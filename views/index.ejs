@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <table style="width:50%">
+    <thead>
+      <tr style="background-color: #CCC">
+        <td style="width:50%">Nome</td>
+        <td style="width:50%">Idade</td>
+        <td colspan="2">Ações</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% docs.forEach(function(customer){ %>
+        <tr>
+          <td>
+              <%= customer.nome %>
+          </td>
+          <td>
+            <%= customer.idade %>
+          </td>
+          <td style="background-color: yellow;">
+            <a href="/edit/<%= customer._id %>" style="color: white;">
+              Editar
+            </a>
+          </td>
+          <td style="background-color: red;">
+            <a href="/delete/<%= customer._id %>" style="color: white;" onclick="return confirm('Tem certeza que deseja excluir?');">
+              Excluir
+            </a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">
+          <a href="/new">Cadastrar Novo</a>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</body

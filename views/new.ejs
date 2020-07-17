@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD de Clientes</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="<%= action %>" method="POST">
+      <p>
+        <label>Nome: <input type="text" name="nome" value="<%= doc.nome %>"/></label>
+      </p>
+      <p>
+        <label>Idade: <input type="number" name="idade" value="<%= doc.idade %>"/></label>
+      </p>
+      <p></p>
+      <p><a href="/">Cancelar</a> | <input type="submit" value="Salvar" /></p>
+    </form>
+  </body>
+</html>
